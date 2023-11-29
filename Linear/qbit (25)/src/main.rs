@@ -16,9 +16,5 @@ fn input_values() -> u64 {
 }
 
 fn solution(day_year: u64) -> u64 { 
-    if (day_year + 5)% 7 == 0 {
-        7
-    } else {
-        (day_year + 5)% 7
-    }
+    ((day_year + 5)-1)%7 + 1
 }

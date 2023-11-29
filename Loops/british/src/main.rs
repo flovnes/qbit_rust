@@ -1,9 +1,7 @@
 use std::io;
 
 fn main() {
-    let (day_year, day_week) = input_values();
-
-    println!("{}", solution(day_year, day_week));
+    solution();
 }
 
 fn input_line() -> String {
@@ -12,14 +10,17 @@ fn input_line() -> String {
     input_line
 }
 
-fn input_values() -> (u64, u64){
-    let values: Vec<u64> = input_line()
+fn input_values() -> (i64,i64) {
+    let values: Vec<i64> = input_line()
     .split_whitespace()
     .map(|q| q.parse().unwrap())
     .collect();
     (values[0], values[1])
 }
 
-fn solution(day_year: u64, day_week: u64) -> u64 { 
-    ((day_year + day_week-1)-1)%7+1
+fn solution() {
+    let (start, end) = input_values();
+    for i in start..=end {
+        println!("{}",(-1_i64).pow(i as u32 -1)*(3*i-1)); 
+    }
 }

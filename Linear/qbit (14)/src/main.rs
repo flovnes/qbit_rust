@@ -17,13 +17,15 @@ fn input_line() -> String {
 
 fn input_values() -> (u64, u64) {
     let mut values: Vec<u64> = input_line()
+        .split_whitespace()
+        .map(|q| q.parse().unwrap())
+        .collect();
+    values.append(
+        &mut input_line()
             .split_whitespace()
             .map(|q| q.parse().unwrap())
-            .collect();
-        values.append(&mut input_line()
-            .split_whitespace()
-            .map(|q| q.parse().unwrap())
-            .collect());
+            .collect(),
+    );
 
     (values[0], values[1])
 }
@@ -38,4 +40,6 @@ fn solution(value: u64) {
     }
 
     println!("{}", format!("{}{}", spaces_insert, value));
+
+    println!("{value:>10}");
 }

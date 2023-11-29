@@ -17,40 +17,20 @@ fn solution()  {
         if line <= num {
             for i in 1..=num {
                  if i > num-line {
-                    if i == num {
-                        // print!("[{i}] * ")
-                        print!("*");
-                    } else if i == num-line+1 {
-                        // print!("[{i}] * ")
-                        print!("* ");
-                    } else {
-                        // print!("[{i}] + ");
-                        print!("+ ");
-                    }
-                } else {
-                    // print!("[{i}]   ");
-                    print!("  ");
-                }
+                    if i == num { print!("*") }
+                    else if i == num-line+1 { print!("* ") }
+                    else { print!("+ ") }
+                } else { print!("  ") }
             }
         } else {
             for i in 1..=num {
                 if i > line-num {
-                    if i == num {
-                        // print!("[{i}] * ")
-                        print!("*");
-                    } else if i == line-num+1 {
-                        // print!("[{i}] * ")
-                        print!("* ");
-                    } else {
-                        // print!("[{i}] + ");
-                        print!("+ ");
-                    }
-                } else {
-                    // print!("[{i}]   ");
-                    print!("  ");
-                }
+                    if i == num { print!("*") }
+                    else if i == line-num+1 { print!("* ") }
+                    else { print!("+ ") }
+                } else { print!("  ") }
             }
         }
         print!("\n");
     }
-}
+} 
